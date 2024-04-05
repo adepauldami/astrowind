@@ -176,13 +176,39 @@ export const findLatestPosts = async ({ count }: { count?: number }): Promise<Ar
 };
 
 /** */
+
+// TODO - original pagination
+// export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
+//   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
+//   return paginate(await fetchPosts(), {
+//     params: { blog: BLOG_BASE || undefined },
+//     pageSize: blogPostsPerPage,
+//   });
+// };
+
+/** */
+// TODO - paginated only the number of available pages (i.e 2 pages)
+export const getLatestBlogPosts = async () => {
+  // Fetch the latest blog posts
+  const allPosts = await fetchPosts(); // Assuming fetchPosts fetches all posts
+  // Return the latest two posts
+  return allPosts.slice(0, 2);
+};
+
 export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
-  return paginate(await fetchPosts(), {
+  
+  // Fetch the latest two blog posts
+  const latestPosts = await getLatestBlogPosts();
+
+  // Paginate the latest two posts
+  return paginate(latestPosts, {
     params: { blog: BLOG_BASE || undefined },
-    pageSize: blogPostsPerPage,
+    pageSize: 2, // Set the page size to 2 to ensure only two posts are fetched
   });
 };
+/** */
+
 
 /** */
 export const getStaticPathsBlogPost = async () => {

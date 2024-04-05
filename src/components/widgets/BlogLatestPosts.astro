@@ -21,8 +21,11 @@ const {
   title = await Astro.slots.render("title"),
   linkText = "View all posts",
   linkUrl = getBlogPermalink(),
+  // linkUrl =          "#",
+
   information = await Astro.slots.render("information"),
-  count = 4,
+  // TODO -- number of blogs to show on main page
+  count = 2,
 
   id,
   isDark = false,

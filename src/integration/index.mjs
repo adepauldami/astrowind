@@ -8,7 +8,7 @@ import configBuilder from "./utils/configBuilder"
 const tasksIntegration = () => {
   let config;
   return {
-    name: 'AstroWind:tasks',
+    name: 'Kuch-99 Agricultural Institute:tasks',
 
     hooks: {
       'astro:config:setup': async ({

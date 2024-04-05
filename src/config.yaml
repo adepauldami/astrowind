@@ -1,5 +1,5 @@
 site:
-  name: AstroWind
+  name: Kuch-99 Agricultural Institute
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
+    default: Kuch-99 Agricultural Institute
+    template: '%s — Kuch-99 Agricultural Institute'
   description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Kuch-99 Agricultural Institute
     images:
       - url: '~/assets/images/default.png'
         width: 1200
@@ -61,7 +61,8 @@ apps:
         index: false
 
     isRelatedPostsEnabled: true
-    relatedPostsCount: 4
+     // TODO Related Posts section will be displayed above the
+    relatedPostsCount: 1
 
 analytics:
   vendors:
